@@ -31,7 +31,7 @@ gem 'carrierwave'
 # gem 'imagemagick'
 gem 'rmagick'
 gem 'turbolinks'
-
+gem 'simple_form'
 group :development do
   gem 'annotate'
 end

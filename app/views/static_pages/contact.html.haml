@@ -1,2 +1,36 @@
-%h1 StaticPages#contact
-%p Find me in app/views/static_pages/contact.html.haml
+.row
+  / Contact Details
+  .large-9.columns
+    %h3 Get in Touch!
+    %p
+      We'd love to hear from you. You can either reach out to us as a whole and	one of our awesome team members will get back to you, or if you have a specific question reach out to one of our staff. We love getting email all 	day
+      = succeed "." do
+        %em all day
+    %dl.tabs{"data-tab" => ""}
+      %dd.active
+        %a{:href => "#panel1"} Contact Our School
+    .tabs-content
+      <div class="content active" id"panel1">
+      %form
+        .row.collapse
+          .large-2.columns
+            %label.inline Your Name
+          .large-10.columns
+            %input#yourName{:placeholder => "name", :type => "text"}
+        .row.collapse
+          .large-2.columns
+            %label.inline Your Email
+          .large-10.columns
+            %input#yourEmail{:placeholder => "email@domain-name.com", :type => "text"}
+        %label What's up?
+        %textarea{:rows => "4"}
+        %button.radius.button{:type => "submit"} Submit
+    #panel2.content
+      %ul.large-block-grid-5
+        %li
+          %a{:href => "mailto:mal@domain.com"}
+            %img{:src => "http://placehold.it/200x200&text=[person]"} Person 1
+        %li
+          %a{:href => "mailto:mal@domain.com"}
+            %img{:src => "http://placehold.it/200x200&text=[person]"} Person 2
+
