@@ -25,6 +25,7 @@ gem 'backbone-on-rails'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '1.5.3'
+gem 'uglifier'
 
 gem 'devise'
 gem 'carrierwave'
@@ -32,6 +33,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'turbolinks'
 gem 'simple_form'
+
 group :development do
   gem 'annotate'
 end
