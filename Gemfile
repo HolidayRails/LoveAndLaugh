@@ -12,7 +12,6 @@ gem 'jquery-rails'
 
 # gem 'sitemap_generator'
 
-gem 'hirb'
 
 gem 'haml-rails', '0.5.2'
 gem 'foundation-rails'
