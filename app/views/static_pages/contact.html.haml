@@ -1,36 +1,55 @@
 .row
   / Contact Details
   .large-9.columns
-    %h3 Get in Touch!
+    %h3 Contact Us
+    .row
+      .large-12.columns
+        %h6 Email:
+        %p parryg@hotmail.com
+        %h6 Address:
+        899 Rubis Dr
+        Sunnyvale, CA 94087
+        %h6 Phone number: (408) 689-2125
+    %br
+    %br
     %p
-      We'd love to hear from you. You can either reach out to us as a whole and	one of our awesome team members will get back to you, or if you have a specific question reach out to one of our staff. We love getting email all 	day
-      = succeed "." do
-        %em all day
-    %dl.tabs{"data-tab" => ""}
-      %dd.active
-        %a{:href => "#panel1"} Contact Our School
-    .tabs-content
-      <div class="content active" id"panel1">
-      %form
-        .row.collapse
-          .large-2.columns
-            %label.inline Your Name
-          .large-10.columns
-            %input#yourName{:placeholder => "name", :type => "text"}
-        .row.collapse
-          .large-2.columns
-            %label.inline Your Email
-          .large-10.columns
-            %input#yourEmail{:placeholder => "email@domain-name.com", :type => "text"}
-        %label What's up?
-        %textarea{:rows => "4"}
-        %button.radius.button{:type => "submit"} Submit
-    #panel2.content
-      %ul.large-block-grid-5
-        %li
-          %a{:href => "mailto:mal@domain.com"}
-            %img{:src => "http://placehold.it/200x200&text=[person]"} Person 1
-        %li
-          %a{:href => "mailto:mal@domain.com"}
-            %img{:src => "http://placehold.it/200x200&text=[person]"} Person 2
+      We'd love to hear from you. If you have a specific question reach out to one of our staff. We love getting email all day.
 
+
+      .google-maps
+        %iframe{:frameborder => "0", :height => "450", :src => "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6342.199463321413!2d-122.04617431585424!3d37.36381698893154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb6887e9c04e9%3A0x2c3c0a1fc322f081!2s899+Rubis+Dr%2C+Sunnyvale%2C+CA+94087!5e0!3m2!1sen!2sus!4v1418272039050", :style => "border:0", :width => "600"}
+
+
+
+
+
+    -#  = succeed "." do
+    -#    %em all day
+    -#%dl.tabs{"data-tab" => ""}
+    -#  %dd.active
+    -#    %a{:href => "#panel1"} Contact Our School
+    -#.tabs-content
+    -#  <div class="content active" id"panel1">
+    -#  %form
+    -#    .row.collapse
+    -#      .large-2.columns
+    -#        %label.inline Your Name
+    -#      .large-10.columns
+    -#        %input#yourName{:placeholder => "name", :type => "text"}
+    -#    .row.collapse
+    -#      .large-2.columns
+    -#        %label.inline Your Email
+    -#      .large-10.columns
+    -#        %input#yourEmail{:placeholder => "email@domain-name.com", :type => "text"}
+    -#    %label What's up?
+    -#    %textarea{:rows => "4"}
+    -#    %button.radius.button{:type => "submit"} Submit
+    -##panel2.content
+    -#  %ul.large-block-grid-5
+    -#    %li
+    -#      %a{:href => "mailto:mal@domain.com"}
+    -#        %img{:src => "http://placehold.it/200x200&text=[person]"} Person 1
+    -#    %li
+    -#      %a{:href => "mailto:mal@domain.com"}
+    -#        %img{:src => "http://placehold.it/200x200&text=[person]"} Person 2
+    -#
