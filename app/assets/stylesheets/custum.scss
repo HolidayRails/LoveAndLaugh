@@ -24,3 +24,29 @@ iframe {
   -o-background-size: cover;
   background-size: cover;
 }
+
+
+.project_index {
+  .project_content {
+    float: left;
+    margin: 20px;
+    margin-left: 60px;
+    min-height: 300px;
+    min-width: 300px;
+    position:relative;
+  }
+}
+
+.video {
+//  height: 360px;
+//  width: 100%;
+  background-color: black;
+  line-height: 25em;
+  text-align: center;
+}
+
+.video_text {
+  color: gray;
+  vertical-align: middle;
+  font-size: 25px;
+}
