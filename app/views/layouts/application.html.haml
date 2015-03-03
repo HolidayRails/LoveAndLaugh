@@ -7,11 +7,11 @@
   / Set the viewport width to device width for mobile
   %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
   %title= content_for?(:title) ? yield(:title) : "Untitled"
-  = stylesheet_link_tag    "application"
+  = stylesheet_link_tag  "application"
   %link{:href => "http://fonts.googleapis.com/css?family=Tangerine", :rel => "stylesheet", :type => "text/css"}/
   = javascript_include_tag "vendor/custom.modernizr"
   = csrf_meta_tags
-%body
+%body.background
   = render 'layouts/header'
   = yield
   = render 'layouts/footer'
