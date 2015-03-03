@@ -8,4 +8,12 @@ class StaticPagesController < ApplicationController
   def about
   end
 
+  def videos
+
+  end
+
+  def photos
+
+  end
+
 end
