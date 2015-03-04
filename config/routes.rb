@@ -1,5 +1,6 @@
 LoveAndLaugh::Application.routes.draw do
 
+  devise_for :users
   get "static_pages/home"
   get "static_pages/contact"
   get "static_pages/about"
@@ -8,6 +9,8 @@ LoveAndLaugh::Application.routes.draw do
 
   resources :kids
   root 'static_pages#home'
+  resources :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

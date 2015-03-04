@@ -1,13 +1,23 @@
 .row
-  .large-3.columns
+  .large-2.left.columns
     %h1
-      = link_to image_tag("loveandlaughter/logo.png", :border => 0), static_pages_home_path, {:class => 'dock-item'}
-  .large-9.columns
-    %ul.right.button-group
+      = link_to image_tag("loveandlaughter/logo.png", :border => 0, height: '10px'), static_pages_home_path, {:class => 'dock-item'}
+  .large-10.columns
+    %ul.button-group
       %li= link_to "Home", static_pages_home_path, class: :button
       %li= link_to "About Us", static_pages_about_path, class: :button
       %li= link_to "Contact Us ", static_pages_contact_path, class: :button
-      %li= link_to "Register your kid", new_kid_path, class: :button
+      -#%li= link_to "Register your kid", new_kid_path, class: :button
       %li= link_to "Photo Gallery", static_pages_photos_path, class: :button
       %li= link_to "Videos", static_pages_videos_path, class: :button
+      - if current_user
+        %a.button.dropdown(href="" data-dropdown="drop")
+          = truncate(current_user.email, length: 10, omission: '.')
+        %ul#drop.f-dropdown(data-dropdown-content)
 
+          %li= link_to 'Edit Profile', edit_user_path(current_user)
+          %li= link_to 'Change Email / Password', edit_user_registration_path
+          %li= link_to 'Logout', destroy_user_session_path
+      - else
+        %li
+          = link_to 'Log in', new_user_session_path, class: :button
