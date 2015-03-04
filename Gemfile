@@ -32,7 +32,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'turbolinks'
 gem 'simple_form'
-gem 'protected_attributes'
+# gem 'protected_attributes'
 
 group :development do
   gem 'annotate'

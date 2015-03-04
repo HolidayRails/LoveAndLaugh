@@ -1,8 +1,9 @@
 LoveAndLaugh::Application.routes.draw do
 
+  devise_for :users
+
   resources :photos
 
-  devise_for :users
   get "static_pages/home"
   get "static_pages/contact"
   get "static_pages/about"
