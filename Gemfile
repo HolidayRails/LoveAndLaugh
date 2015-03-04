@@ -28,6 +28,7 @@ gem 'uglifier'
 
 gem 'devise'
 gem 'carrierwave'
+gem 'hirb'
 # gem 'imagemagick'
 gem 'rmagick'
 gem 'turbolinks'
