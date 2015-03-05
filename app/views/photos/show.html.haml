@@ -1,9 +1,11 @@
-%p#notice= notice
+.row
+  .large-12.columns
+    %p#notice= notice
 
-%p
-  %b Name:
-  = @photo.name
+    %p
+      %h1= @photo.name
+      = image_tag @photo.image_url.to_s
 
-= link_to 'Edit', edit_photo_path(@photo)
-\|
-= link_to 'Back', photos_path
+    = link_to 'Edit', edit_photo_path(@photo)
+    \|
+    = link_to 'Back', photos_path

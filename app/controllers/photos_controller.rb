@@ -23,7 +23,8 @@ class PhotosController < ApplicationController
   def create
     @photo = Photo.new(photo_params)
     @photo.save
-    respond_with(@photo)
+    redirect_to photos_path
+    # respond_with(@photo)
   end
 
   def update
