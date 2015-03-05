@@ -22,9 +22,11 @@ class PhotosController < ApplicationController
 
   def create
     @photo = Photo.new(photo_params)
-    @photo.save
-    redirect_to photos_path
-    # respond_with(@photo)
+    if @photo.save
+      redirect_to photos_path, :notice => "Successfully Uploaded"
+    else
+      redirect_to photos_path, :notice => "Failed to upload. Please try again."
+    end
   end
 
   def update
