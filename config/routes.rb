@@ -8,6 +8,7 @@ LoveAndLaugh::Application.routes.draw do
   get "static_pages/contact"
   get "static_pages/about"
   get "static_pages/videos"
+  get "static_pages/schedule"
 
   resources :kids
   root 'static_pages#home'
