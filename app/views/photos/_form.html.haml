@@ -6,7 +6,8 @@
       .form-inputs
         = f.input :name
         = f.file_field :image
-        = f.input :remote_image_url, "or image URL"
+        %p or
+        = f.input :remote_image_url
 
       .form-actions
         = f.submit  "save", class: :button
