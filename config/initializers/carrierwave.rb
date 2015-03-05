@@ -4,7 +4,8 @@ CarrierWave.configure do |config|
     aws_access_key_id: ENV["AWSAccessKeyId"],
     aws_secret_access_key: ENV["AWSSecretKey"]
   }
-  config.fog_directory = "lovelaugh"
-  # config.fog_public     = true
-  # config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}
+  config.fog_directory  = "lovelaugh-#{Rails.env}"                 # required
+  # config.fog_host       = 'https://s3.amazonaws.com'            # optional, defaults to nil
+  # config.fog_public     = false                                   # optional, defaults to true
+  # config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}  # optional, defaults to {}
 end
