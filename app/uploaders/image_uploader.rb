@@ -12,8 +12,10 @@ class ImageUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  version :thumb do
-    # process :resize_to_limit => [200, 200]
-  end
+  process resize_to_fill:[800, 800]
+
+  # version :thumb do
+  #   process :resize_to_limit => [200, 200]
+  # end
 
 end
