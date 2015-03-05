@@ -24,4 +24,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :authentications, :dependent => :destroy
+
+
+  def admin?
+    self.email == "vinti.uiet@gmail.com" || self.email == "parryg@hotmail.com"
+  end
+
 end
