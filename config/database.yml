@@ -27,7 +27,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: topmunch_development
+  database: love_laugh_development
   host: 127.0.0.1
   user: pkhadloya
   password:
@@ -37,7 +37,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: topmunch_test
+  database: love_laugh_test
   host: 127.0.0.1
   user: pkhadloya
   password:
@@ -47,7 +47,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: topmunch_production
+  database: love_laugh_production
   host: 127.0.0.1
   user: root
   password:

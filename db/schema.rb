@@ -11,35 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150304194646) do
+ActiveRecord::Schema.define(version: 20150306202147) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "galleries", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "kids", force: true do |t|
-    t.string   "name"
-    t.string   "age"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "motherFirstName"
-    t.string   "motherLastName"
-    t.string   "fatherFirstName"
-    t.string   "fatherLastName"
-    t.string   "address"
-    t.string   "phone"
-    t.string   "email"
-    t.text     "likings"
-    t.text     "badHabbits"
-    t.text     "words"
-    t.string   "specificFood"
+  create_table "children", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "parent_id"
+    t.integer  "age"
     t.string   "allergies"
-    t.text     "other"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "photos", force: true do |t|

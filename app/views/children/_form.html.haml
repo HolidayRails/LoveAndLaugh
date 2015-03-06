@@ -1,0 +1,14 @@
+.row
+  .large-12.columns
+    = simple_form_for(@child) do |f|
+      = f.error_notification
+
+      .form-inputs
+        = f.input :first_name
+        = f.input :last_name
+        = f.input :parent_id
+        = f.input :age
+        = f.input :allergies
+
+      .form-actions
+        = f.submit "save", class: :button

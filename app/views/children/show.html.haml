@@ -1,0 +1,23 @@
+.row
+  .large-12.columns
+    %p#notice= notice
+
+    %p
+      %b First name:
+      = @child.first_name
+    %p
+      %b Last name:
+      = @child.last_name
+    %p
+      %b Parent:
+      = @child.parent_id
+    %p
+      %b Age:
+      = @child.age
+    %p
+      %b Allergies:
+      = @child.allergies
+
+    = link_to 'Edit', edit_child_path(@child)
+    \|
+    = link_to 'Back', children_path
