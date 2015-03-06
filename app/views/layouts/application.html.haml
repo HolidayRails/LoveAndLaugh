@@ -7,6 +7,7 @@
   / Set the viewport width to device width for mobile
   %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
   %title= content_for?(:title) ? yield(:title) : "Love & Laughter Playschool"
+  %link(rel="shortcut icon" href="favicon.ico" type="image/x-icon")
   = stylesheet_link_tag  "application"
   %link{:href => "http://fonts.googleapis.com/css?family=Tangerine", :rel => "stylesheet", :type => "text/css"}/
   = javascript_include_tag "vendor/custom.modernizr"
