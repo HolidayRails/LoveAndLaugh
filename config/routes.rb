@@ -1,11 +1,11 @@
 LoveAndLaugh::Application.routes.draw do
 
-  resources :children
-
   devise_for :users
 
   resources :photos
+  resources :children
 
+  get "children/index"
   get "static_pages/home"
   get "static_pages/contact"
   get "static_pages/about"
@@ -13,7 +13,7 @@ LoveAndLaugh::Application.routes.draw do
   get "static_pages/schedule"
   root 'static_pages#home'
   resources :users do
-    resource :kids
+    resource :children
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

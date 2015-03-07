@@ -10,7 +10,7 @@
       = @child.last_name
     %p
       %b Parent:
-      = @child.parent_id
+      = User.find(@child.user_id).name
     %p
       %b Age:
       = @child.age

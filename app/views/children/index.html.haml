@@ -13,17 +13,13 @@
         %th
         %th
 
-      - @children.each do |child|
+      - Child.all.each do |child|
         %tr
           %td= child.first_name
           %td= child.last_name
-          %td= child.parent_id
+          %td= User.find(child.user_id).name
           %td= child.age
           %td= child.allergies
-          %td= link_to 'Show', child
           %td= link_to 'Edit', edit_child_path(child)
           %td= link_to 'Destroy', child, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
     %br
-
-    = link_to 'New Child', new_child_path

@@ -13,7 +13,8 @@ class ChildrenController < ApplicationController
   end
 
   def new
-    @child = Child.new
+    @user = current_user
+    @child = @user.children.build
     respond_with(@child)
   end
 
@@ -21,7 +22,9 @@ class ChildrenController < ApplicationController
   end
 
   def create
-    @child = Child.new(child_params)
+    @user = current_user
+    @child = @user.children.build(child_params)
+    @child.update_attribute(:parent_id, @user.id)
     @child.save
     respond_with(@child)
   end
@@ -42,6 +45,10 @@ class ChildrenController < ApplicationController
     end
 
     def child_params
-      params.require(:child).permit(:first_name, :last_name, :parent_id, :age, :allergies)
+      if params.count > 1
+        params.require(:child).permit(:first_name, :user_id, :last_name, :age, :allergies)
+      end
     end
+
+
 end
