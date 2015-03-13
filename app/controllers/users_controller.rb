@@ -1,15 +1,15 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
-    before_filter :set_user, :only => [:edit, :update, :show]
+  before_filter :set_user, :only => [:edit, :update, :show]
 
     def edit
-      @user = current_user
     end
 
     def show
     end
 
     def index
+      @users = User.all
     end
 
     def update
@@ -32,6 +32,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:email, :name)
+      params.require(:user).permit(:email, :name, :confirmed)
     end
 end

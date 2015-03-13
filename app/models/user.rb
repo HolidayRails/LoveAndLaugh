@@ -16,6 +16,7 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #  name                   :string(255)
+#  confirmed              :boolean
 #
 
 class User < ActiveRecord::Base
@@ -26,9 +27,17 @@ class User < ActiveRecord::Base
   has_many :authentications, :dependent => :destroy
   has_many :children, dependent: :destroy
 
+  # def initialize
+  #   self.confirmed = false
+  # end
+  # TODO
 
   def admin?
     self.email == "vinti.uiet@gmail.com" || self.email == "parryg@hotmail.com"
+  end
+
+  def confirmed?
+    confirmed
   end
 
 end
