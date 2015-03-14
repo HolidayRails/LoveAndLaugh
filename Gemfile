@@ -19,6 +19,7 @@ gem 'rmagick'
 gem 'fog'
 gem 'turbolinks'
 gem 'simple_form'
+gem 'mail_form', '1.5'
 
 group :development do
   gem 'annotate'
@@ -27,6 +28,7 @@ end
 group :development, :test do
   gem 'hirb'
   gem 'debugger'
+  gem 'foreman'
 end
 
 group :doc do
