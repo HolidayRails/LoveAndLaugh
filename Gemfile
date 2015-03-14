@@ -19,7 +19,7 @@ gem 'rmagick'
 gem 'fog'
 gem 'turbolinks'
 gem 'simple_form'
-gem 'mail_form', '1.5'
+gem 'mail_form'
 
 group :development do
   gem 'annotate'

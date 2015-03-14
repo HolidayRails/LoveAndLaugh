@@ -239,7 +239,7 @@ DEPENDENCIES
   haml-rails (= 0.5.2)
   hirb
   jquery-rails
-  mail_form (= 1.5)
+  mail_form
   pg
   rack-google-analytics
   rails (= 4.0.2)
