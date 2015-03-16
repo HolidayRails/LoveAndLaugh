@@ -4,8 +4,12 @@ class PhotosController < ApplicationController
   respond_to :html
 
   def index
-    @photos = Photo.all
-    respond_with(@photos)
+    if current_user && current_user.confirmed?
+      @photos = Photo.all
+    else
+      @photos = Photo.all.where(:public => true)
+    end
+    respond_with(@public_photos)
   end
 
   def show
@@ -45,6 +49,6 @@ class PhotosController < ApplicationController
     end
 
     def photo_params
-      params.require(:photo).permit(:name, :image, :remote_image_url)
+      params.require(:photo).permit(:name, :image, :remote_image_url, :public)
     end
 end
