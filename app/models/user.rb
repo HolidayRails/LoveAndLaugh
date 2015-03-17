@@ -26,6 +26,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :authentications, :dependent => :destroy
   has_many :children, dependent: :destroy
+  after_update :send_email, :if => :confirmed_changed?
 
   # def initialize
   #   self.confirmed = false
@@ -40,4 +41,9 @@ class User < ActiveRecord::Base
     confirmed
   end
 
+  def send_email
+    if self.confirmed
+      UserMailer.account_confirmation(self).deliver
+    end
+  end
 end
