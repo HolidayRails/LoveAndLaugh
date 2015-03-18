@@ -1,4 +1,5 @@
 class ChildrenController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_child, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
@@ -33,7 +34,7 @@ class ChildrenController < ApplicationController
     @child.update(child_params)
     respond_to do |format|
       if @child.update_attributes(child_params)
-        format.html { redirect_to children_path, notice: 'Child was successfully updated.' }
+        format.html { redirect_to child_path(@child), notice: 'Child was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

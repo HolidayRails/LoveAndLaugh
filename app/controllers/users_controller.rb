@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!, :except => [:show, :index]
+  before_filter :authenticate_user!
   before_filter :set_user, :only => [:edit, :update, :show]
 
     def edit
