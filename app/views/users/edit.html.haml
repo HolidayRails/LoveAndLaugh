@@ -7,5 +7,8 @@
       - if current_user.admin?
         = f.input :confirmed
       = f.submit 'Save Changes', :class => 'button'
-    = link_to t('views.users.edit.delete_account'), user_registration_path, :method => :delete,
-        :confirm => 'Are you sure you want to destroy your account?', :class => "close"
+    %br
+    %br
+    %hr
+    - if current_user.confirmed?
+      = link_to 'Add your child profile', new_user_children_path(current_user), class: :button

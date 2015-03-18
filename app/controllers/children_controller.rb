@@ -31,7 +31,15 @@ class ChildrenController < ApplicationController
 
   def update
     @child.update(child_params)
-    respond_with(@child)
+    respond_to do |format|
+      if @child.update_attributes(child_params)
+        format.html { redirect_to children_path, notice: 'Child was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'edit' }
+        format.json { render json: @event.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy
