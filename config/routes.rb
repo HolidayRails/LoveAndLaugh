@@ -1,5 +1,6 @@
 LoveAndLaugh::Application.routes.draw do
 
+
   devise_for :users
 
   resources :photos
@@ -11,8 +12,12 @@ LoveAndLaugh::Application.routes.draw do
   get "static_pages/videos"
   get "static_pages/schedule"
   root 'static_pages#home'
+  get "users/calling_method"
+  get "users/send_message"
+
   resources :users do
     resource :children
+    resources :messages
   end
 
   match '/contacts',     to: 'contacts#new', via: 'get'

@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "info@loveandlaughterplayschool.com"
+  default from: "Love and Laughter Playschool" "info@loveandlaughterplayschool.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -10,4 +10,11 @@ class UserMailer < ActionMailer::Base
     @user = user
     mail to: user.email, subject: "Welcome to Love And Laughter Playschool."
   end
+
+  def send_digest user, message
+    @user = user
+    @content = message.content
+    mail(to: user.email, subject: message.title)
+  end
+
 end

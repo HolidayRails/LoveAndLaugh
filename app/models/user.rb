@@ -26,6 +26,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :authentications, :dependent => :destroy
   has_many :children, dependent: :destroy
+  has_many :messages, dependent: :destroy
   after_update :send_email, :if => :confirmed_changed?
 
   # def initialize

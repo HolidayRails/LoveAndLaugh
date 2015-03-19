@@ -1,0 +1,13 @@
+.row
+  .large-12.cols
+    %h1 New message
+
+    = simple_form_for [@user, @message] do |f|
+      = f.error_notification
+
+      .form-inputs
+        = f.input :title
+        = f.input :content
+
+      .form-actions
+        = f.submit "save", class: :button

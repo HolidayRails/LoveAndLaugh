@@ -26,6 +26,18 @@ class UsersController < ApplicationController
       end
     end
 
+    def send_message
+
+    end
+
+    def calling_method
+      @users = User.all
+      @users.each do |user|
+        UserMailer.send_digest(user).deliver
+      end
+      render action: 'index'
+    end
+
     private
 
     def redirect_if_not_admin
