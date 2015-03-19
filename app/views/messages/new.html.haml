@@ -8,6 +8,7 @@
       .form-inputs
         = f.input :title
         = f.input :content
+        -#= f.association :users
 
       .form-actions
         = f.submit "save", class: :button

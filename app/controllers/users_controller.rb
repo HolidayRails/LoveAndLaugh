@@ -26,16 +26,22 @@ class UsersController < ApplicationController
       end
     end
 
-    def send_message
-
+    def admin_users
+      User.all.each do |u|
+        if u.admin?
+          @users.push(u)
+        end
+      end
+      @users
     end
 
-    def calling_method
-      @users = User.all
-      @users.each do |user|
-        UserMailer.send_digest(user).deliver
+    def confirmed_users
+      User.all.each do |u|
+        if u.confirmed?
+          @users.push(u)
+        end
       end
-      render action: 'index'
+      @users
     end
 
     private

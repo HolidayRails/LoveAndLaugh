@@ -26,4 +26,4 @@
       - if current_user && current_user.admin?
         %li= link_to 'Browse Parents', users_path, class: :button
         %li= link_to 'Browse Children', children_path, class: :button
-        %li= link_to 'Send a message', new_user_message_path(current_user), class: :button
+        %li= link_to 'Message to Parents', new_user_message_path(current_user), class: :button

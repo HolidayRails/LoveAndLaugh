@@ -25,14 +25,20 @@ class MessagesController < ApplicationController
   def create
     @user = current_user
     @message = @user.messages.build(message_params)
-
+    puts message_params
     respond_to do |format|
       if @message.save
-        UserMailer.send_digest(@user, @message).deliver
+        admin_broadcast_message
         format.html { redirect_to static_pages_home_path, notice: "message successfully created" }
       else
         format.html { render action: "new" }
       end
+    end
+  end
+
+  def admin_broadcast_message
+    User.all.each do |u|
+      UserMailer.send_digest(u, @message).deliver
     end
   end
 
