@@ -27,3 +27,6 @@
         %li= link_to 'Browse Parents', users_path, class: :button
         %li= link_to 'Browse Children', children_path, class: :button
         %li= link_to 'Message to Parents', new_user_message_path(current_user), class: :button
+      - if current_user && !current_user.children.nil?
+        -current_user.children.all.each do |c|
+          %li= link_to "#{c.first_name}'s Profile", child_path(c), class: :button

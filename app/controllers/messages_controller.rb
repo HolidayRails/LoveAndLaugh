@@ -28,12 +28,20 @@ class MessagesController < ApplicationController
     puts message_params
     respond_to do |format|
       if @message.save
-        admin_broadcast_message
+        if @message.parent_id.nil?
+          admin_broadcast_message
+        else
+          admin_single_parent_message
+        end
         format.html { redirect_to static_pages_home_path, notice: "message successfully created" }
       else
         format.html { render action: "new" }
       end
     end
+  end
+
+  def admin_single_parent_message
+    UserMailer.send_digest(User.find(@message.parent_id), @message).deliver
   end
 
   def admin_broadcast_message
@@ -64,6 +72,6 @@ class MessagesController < ApplicationController
   end
 
     def message_params
-      params.require(:message).permit(:name, :title, :content, :user_id)
+      params.require(:message).permit(:name, :title, :content, :user_id, :parent_id)
     end
 end

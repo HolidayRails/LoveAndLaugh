@@ -1,23 +1,41 @@
 .row
-  .large-12.columns
-    %p#notice= notice
-
+  .large-5.columns
+    %h2
+      = @child.first_name + " " + @child.last_name
     %p
-      %b First name:
-      = @child.first_name
-    %p
-      %b Last name:
-      = @child.last_name
-    %p
-      %b Parent:
+      %b Parent Name
       = User.find(@child.user_id).name
     %p
       %b Age:
-      = @child.age
+      = @child.age || "Years"
     %p
       %b Allergies:
       = @child.allergies
+  .large-7.columns
+    %br
+    %h3 Weekly Reports and Messages
+    - Message.all.where(:parent_id => @child.parent_id).each do |m|
+      %p
+        = m.content
+      %p.right
+        = time_ago_in_words(m.created_at, Time.now) + " ago"
+      %hr
 
-    = link_to 'Edit', edit_child_path(@child)
-    \|
-    = link_to 'Back', children_path
+- if current_user && current_user.admin?
+  .row
+    .large-12.cols
+      %h1 New message
+
+      = simple_form_for [@user, @message] do |f|
+        = f.error_notification
+
+        .form-inputs
+          = f.input :title
+          = f.input :content
+          = f.hidden_field :parent_id, value: @child.user_id
+        .form-actions
+          = f.submit "save", class: :button
+
+
+
+

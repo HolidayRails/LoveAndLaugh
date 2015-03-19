@@ -11,6 +11,8 @@ class ChildrenController < ApplicationController
   end
 
   def show
+    @user = current_user
+    @message = Message.new
     respond_with(@child)
   end
 

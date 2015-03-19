@@ -17,7 +17,6 @@
 #  updated_at             :datetime
 #  name                   :string(255)
 #  confirmed              :boolean
-#
 
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
