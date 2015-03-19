@@ -1,5 +1,6 @@
 class ChildrenController < ApplicationController
   before_filter :authenticate_user!
+  before_filter :redirect_if_not_admin, :only => [:index]
   before_action :set_child, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
@@ -53,11 +54,16 @@ class ChildrenController < ApplicationController
       @child = Child.find(params[:id])
     end
 
+    def redirect_if_not_admin
+      unless current_user.admin?
+        redirect_to new_user_registration_path, notice: 'Only admin can view all children'
+      end
+    end
+
     def child_params
       if params.count > 1
         params.require(:child).permit(:first_name, :user_id, :last_name, :age, :allergies)
       end
     end
-
 
 end

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :set_user, :only => [:edit, :update, :show]
+  before_filter :redirect_if_not_admin, :only => [:index]
+  before_action :set_user, :only => [:edit, :update, :show]
 
     def edit
     end
@@ -26,6 +27,12 @@ class UsersController < ApplicationController
     end
 
     private
+
+    def redirect_if_not_admin
+      unless current_user.admin?
+        redirect_to new_user_registration_path, notice: 'Only admin can view all users'
+      end
+    end
 
     def set_user
       @user = User.find(params[:id])
