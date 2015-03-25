@@ -20,6 +20,10 @@ gem 'fog'
 gem 'turbolinks'
 gem 'simple_form'
 gem 'mail_form'
+gem 'paperclip'
+gem 'ckeditor'
+gem 'carrierwave'
+gem 'mini_magick'
 
 group :development do
   gem 'annotate'

@@ -49,6 +49,13 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
+    ckeditor (4.1.1)
+      cocaine
+      orm_adapter (~> 0.5.0)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.7)
+      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -123,6 +130,7 @@ GEM
       actionmailer (>= 3.2, < 5)
       activemodel (>= 3.2, < 5)
     mime-types (1.25.1)
+    mini_magick (4.2.0)
     minitest (4.7.5)
     multi_json (1.10.1)
     net-scp (1.0.4)
@@ -130,6 +138,11 @@ GEM
     net-ssh (2.7.0)
     nokogiri (1.5.5)
     orm_adapter (0.5.0)
+    paperclip (4.2.1)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.3)
+      mime-types
     pg (0.17.1)
     polyglot (0.3.5)
     rack (1.5.2)
@@ -230,6 +243,7 @@ DEPENDENCIES
   annotate
   backbone-on-rails
   carrierwave
+  ckeditor
   debugger
   devise
   factory_girl_rails
@@ -240,6 +254,8 @@ DEPENDENCIES
   hirb
   jquery-rails
   mail_form
+  mini_magick
+  paperclip
   pg
   rack-google-analytics
   rails (= 4.0.2)

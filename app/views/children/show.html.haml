@@ -16,7 +16,7 @@
     %h3 Weekly Reports and Messages
     - Message.all.where(:parent_id => @child.parent_id).each do |m|
       %p
-        = m.content
+        = raw m.content
       %p.right
         = time_ago_in_words(m.created_at, Time.now) + " ago"
       %hr
@@ -31,7 +31,7 @@
 
         .form-inputs
           = f.input :title
-          = f.input :content
+          = f.input :content, :as => :ckeditor
           = f.hidden_field :parent_id, value: @child.user_id
         .form-actions
           = f.submit "save", class: :button

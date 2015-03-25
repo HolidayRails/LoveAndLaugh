@@ -95,5 +95,6 @@ LoveAndLaugh::Application.configure do
   user_name: ENV["GMAIL_USERNAME"],
   password: ENV["GMAIL_PASSWORD"]
   }
+  config.assets.precompile += Ckeditor.assets
 
 end
