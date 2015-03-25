@@ -14,7 +14,6 @@ gem 'backbone-on-rails'
 
 gem 'uglifier'
 gem 'devise'
-gem 'carrierwave'
 gem 'rmagick'
 gem 'fog'
 gem 'turbolinks'
