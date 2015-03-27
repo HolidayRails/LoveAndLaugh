@@ -17,4 +17,6 @@
 /public/*
 .env
 Procfile
+cron_log.log
+vendor/cache/
 

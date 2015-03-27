@@ -46,4 +46,13 @@ class User < ActiveRecord::Base
       UserMailer.account_confirmation(self).deliver
     end
   end
+
+  def self.holiday_reminder
+    current_date = Time.now.strftime("%Y-%m-%d").to_s
+    dates = ['2015-03-27', '2015-03-27', '2015-03-27', '2015-03-27', '2015-03-27']
+    @users = User.all
+      @users.each do |u|
+        UserMailer.remind_holiday(u).deliver if(u.confirmed? && dates.include?(current_date))
+      end
+  end
 end

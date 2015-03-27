@@ -17,4 +17,7 @@ class UserMailer < ActionMailer::Base
     mail(to: user.email, subject: message.title)
   end
 
+  def remind_holiday user
+    mail(to: user.email, subject: "Tomorrow is holiday")
+  end
 end

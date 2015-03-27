@@ -15,7 +15,6 @@
         %a.button.dropdown(href="" data-dropdown="drop")
           = truncate(current_user.email, length: 10, omission: '.')
         %ul#drop.f-dropdown(data-dropdown-content)
-
           %li= link_to 'Edit Profile', edit_user_path(current_user)
           %li= link_to 'Change Email / Password', edit_user_registration_path
           %li= link_to 'Logout', destroy_user_session_path

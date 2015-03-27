@@ -49,6 +49,7 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
+    chronic (0.10.2)
     ckeditor (4.1.1)
       cocaine
       orm_adapter (~> 0.5.0)
@@ -235,6 +236,8 @@ GEM
       json (>= 1.8.0)
     warden (1.2.3)
       rack (>= 1.0)
+    whenever (0.9.4)
+      chronic (>= 0.6.3)
 
 PLATFORMS
   ruby
@@ -269,3 +272,4 @@ DEPENDENCIES
   therubyracer
   turbolinks
   uglifier
+  whenever

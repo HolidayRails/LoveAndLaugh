@@ -23,6 +23,7 @@ gem 'paperclip'
 gem 'ckeditor'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'whenever', :require => false
 
 group :development do
   gem 'annotate'
