@@ -1,4 +1,4 @@
-every 1.day, :at => '4:11 pm' do
+every 1.day, :at => '6:10 pm' do
   runner "User.holiday_reminder", :output => 'cron_log.log'
 end
 
