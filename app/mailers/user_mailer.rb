@@ -18,6 +18,7 @@ class UserMailer < ActionMailer::Base
   end
 
   def remind_holiday user
-    mail(to: user.email, subject: "Tomorrow is holiday")
+    d = Date.parse(Time.now.strftime("%Y-%m-%d").to_s)
+    mail(to: user.email, subject: (d + 3).to_s + " is holiday")
   end
 end
