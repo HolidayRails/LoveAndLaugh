@@ -49,7 +49,7 @@ class User < ActiveRecord::Base
 
   def self.holiday_reminder
     current_date = Time.now.strftime("%Y-%m-%d").to_s
-    d = Date.parse(current_date) + 3
+    d = Date.parse(current_date) + 7
 
     if (d).holiday?(:us)
       holiday_name = Holidays.on(d, :us)[0][:name]
@@ -61,10 +61,15 @@ class User < ActiveRecord::Base
   end
 
   def self.feedback_request_reminder
-    current_date = Time.now.strftime("%Y-%m-%d").to_s
-    d = Date.parse(current_date)
+    current_date = Date.parse(Time.now.strftime("%Y-%m-%d").to_s)
     Child.all.each do |c|
-      if(c.joining_date + 60 == d)
+     if c.feedback_requested_date.nil?
+       @date = c.joining_date + 60
+       c.update_attributes(:feedback_requested_date => @date)
+     else
+      @date = c.feedback_requested_date + 60
+     end
+     if(@date == current_date)
         UserMailer.request_feedback(c.user_id).deliver
       end
     end

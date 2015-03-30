@@ -18,12 +18,10 @@ class UserMailer < ActionMailer::Base
   end
 
   def remind_holiday user, holiday_name, holiday_date
-    puts user.email
     mail(to: user.email, subject: holiday_name + " is holiday! " + "date is " + holiday_date.to_s)
   end
 
   def request_feedback user_id
-    puts "I am inside"
     puts User.find(user_id).email
     mail(to: User.find(user_id).email, subject: "Feedback Request")
   end
