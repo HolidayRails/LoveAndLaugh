@@ -11,7 +11,6 @@ gem 'haml-rails', '0.5.2'
 gem 'foundation-rails'
 gem 'backbone-on-rails'
 
-
 gem 'uglifier'
 gem 'devise'
 gem 'rmagick'
@@ -24,6 +23,7 @@ gem 'ckeditor'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'whenever', :require => false
+gem 'holidays'
 
 group :development do
   gem 'annotate'
@@ -49,5 +49,4 @@ group :production do
   gem 'therubyracer', platforms: :ruby
   gem 'rack-google-analytics'
   gem 'rails_12factor', '0.0.2'
-
 end

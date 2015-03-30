@@ -48,16 +48,15 @@ class User < ActiveRecord::Base
   end
 
   def self.holiday_reminder
-    three_dates_before = []
     current_date = Time.now.strftime("%Y-%m-%d").to_s
-    dates = ['2015-03-27', '2015-04-01', '2015-03-27', '2015-03-27', '2015-03-27']
-    dates.each do |d|
-      three_dates_before.push((Date.parse(d) - 3).to_s)
-    end
+    d = Date.parse(current_date) + 3
 
-    @users = User.all
+    if (d).holiday?(:us)
+      holiday_name = Holidays.on(d, :us)[0][:name]
+      @users = User.all
       @users.each do |u|
-        UserMailer.remind_holiday(u).deliver if(u.confirmed? && three_dates_before.include?(current_date))
+        UserMailer.remind_holiday(u, holiday_name, d).deliver if(u.confirmed?)
       end
+    end
   end
 end
