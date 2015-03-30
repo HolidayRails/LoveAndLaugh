@@ -5,3 +5,9 @@ task :send_reminders => :environment do
   User.holiday_reminder
   puts "Emails sent!"
 end
+
+task :send_feedback => :environment do
+  puts "Requesting feedback"
+  User.feedback_request_reminder
+  puts "Emails sent!"
+end

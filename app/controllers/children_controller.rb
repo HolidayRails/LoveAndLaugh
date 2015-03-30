@@ -64,7 +64,7 @@ class ChildrenController < ApplicationController
 
     def child_params
       if params.count > 1
-        params.require(:child).permit(:first_name, :user_id, :last_name, :age, :allergies)
+        params.require(:child).permit(:first_name, :user_id, :last_name, :age, :allergies, :joining_date, :leaving_date)
       end
     end
 

@@ -59,4 +59,14 @@ class User < ActiveRecord::Base
       end
     end
   end
+
+  def self.feedback_request_reminder
+    current_date = Time.now.strftime("%Y-%m-%d").to_s
+    d = Date.parse(current_date)
+    Child.all.each do |c|
+      if(c.joining_date + 60 == d)
+        UserMailer.request_feedback(c.user_id).deliver
+      end
+    end
+  end
 end
