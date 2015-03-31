@@ -70,6 +70,9 @@ class User < ActiveRecord::Base
        puts "inside else condition"
        @checking_date = c.feedback_requested_date + 2.months
      end
+     puts "@checking_date: " + @checking_date.to_s
+     puts "current_date: " + current_date.to_s
+
      if(@checking_date == current_date)
        puts "inside date meet condition"
        c.update_attributes(:feedback_requested_date => current_date)
