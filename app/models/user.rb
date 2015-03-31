@@ -64,14 +64,17 @@ class User < ActiveRecord::Base
     current_date = Date.parse(Time.now.strftime("%Y-%m-%d").to_s)
     Child.all.each do |c|
      if c.feedback_requested_date.nil?
+       puts "inside nil feedback condition"
        @date = c.joining_date + 60
        c.update_attributes(:feedback_requested_date => @date)
      else
+       puts "inside else condition"
       @date = c.feedback_requested_date + 60
      end
      if(@date == current_date)
-        UserMailer.request_feedback(c.user_id).deliver
-      end
+       puts "inside date meet condition"
+       UserMailer.request_feedback(c.user_id).deliver
+     end
     end
   end
 end
