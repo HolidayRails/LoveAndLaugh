@@ -9,7 +9,7 @@
         -#- f.input :parent_id
         = f.input :age
         = f.input :allergies
-        = f.input :allergies
+        = f.input :dob, :include_blank => true
         - if current_user.admin?
           = f.input :joining_date
           = f.input :leaving_date,  :include_blank => true
