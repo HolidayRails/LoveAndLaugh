@@ -12,6 +12,7 @@ LoveAndLaugh::Application.routes.draw do
   get "static_pages/about"
   get "static_pages/videos"
   get "static_pages/schedule"
+  get "static_pages/testimonials"
   root 'static_pages#home'
   get "users/calling_method"
   get "users/send_message"
