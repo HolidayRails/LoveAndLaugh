@@ -26,6 +26,12 @@
         %li= link_to 'Browse Parents', users_path, class: :button
         %li= link_to 'Browse Children', children_path, class: :button
         %li= link_to 'Message to Parents', new_user_message_path(current_user), class: :button
-      -#- if current_user && current_user.children.nil?
+      -#- if current_user && current_user.children.first.nil?
       -#  - current_user.children.each do |c|
       -#    %li= link_to "#{c.first_name}'s Profile", child_path(c.id), class: :button
+      - if current_user.confirmed? && current_user.children.first.nil?
+        = link_to 'Add your child profile', new_user_children_path(current_user), class: :button
+      - else
+        = link_to 'Edit your child profile', edit_child_path(current_user.children.first), class: :button
+        = link_to 'View your child profile', child_path(current_user.children.first), class: :button
+

@@ -10,5 +10,8 @@
     %br
     %br
     %hr
-    - if current_user.confirmed?
+    - if current_user.confirmed? && current_user.children.first.nil?
       = link_to 'Add your child profile', new_user_children_path(current_user), class: :button
+    - else
+      = link_to 'Edit your child profile', edit_child_path(@user.children.first), class: :button
+

@@ -17,5 +17,8 @@ class Child < ActiveRecord::Base
   belongs_to :user, :foreign_key => 'user_id'
 
   validates :user, presence: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :dob, presence: true
 
 end
