@@ -32,5 +32,5 @@
         -if current_user.children.first.nil?
           = link_to 'Add your child profile', new_user_children_path(current_user), class: :button
         - else
-          = link_to 'Edit your child profile', edit_child_path(current_user.children.first), class: :button
+          -#= link_to 'Edit your child profile', edit_child_path(current_user.children.first), class: :button
           = link_to 'View your child profile', child_path(current_user.children.first), class: :button
