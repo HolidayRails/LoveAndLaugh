@@ -25,18 +25,6 @@ iframe {
   background-size: cover;
 }
 
-
-.project_index {
-  .project_content {
-    float: left;
-    margin: 20px;
-    margin-left: 60px;
-    min-height: 300px;
-    min-width: 300px;
-    position:relative;
-  }
-}
-
 .video {
 //  height: 360px;
 //  width: 100%;
@@ -49,4 +37,23 @@ iframe {
   color: gray;
   vertical-align: middle;
   font-size: 25px;
+}
+
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  margin-bottom: 12px;
+}
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+  position: absolute;
+  top: 0; left: 0;
 }
