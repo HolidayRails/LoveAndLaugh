@@ -1,6 +1,8 @@
 LoveAndLaugh::Application.routes.draw do
 
 
+  resources :videos
+
   resources :testimonials
 
   mount Ckeditor::Engine => '/ckeditor'
