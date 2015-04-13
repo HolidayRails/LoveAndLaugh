@@ -81,20 +81,23 @@ LoveAndLaugh::Application.configure do
   Rails.application.routes.default_url_options[:host] = 'loveandlaughter.herokuapp.com'
   config.serve_static_assets = true
   config.assets.compile = true
-  config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.delivery_method = :smtp
+
+  config.assets.precompile += Ckeditor.assets
 
   config.action_mailer.smtp_settings = {
-  address: "smtp.gmail.com",
-  port: 587,
-  domain: ENV["GMAIL_DOMAIN"],
-  authentication: "plain",
-  enable_starttls_auto: true,
-  user_name: ENV["GMAIL_USERNAME"],
-  password: ENV["GMAIL_PASSWORD"]
+    :address              => "smtp.zoho.com",
+    :port                 => 465,
+    domain: 'zoho.com',
+    user_name: 'info@loveandlaughterplayschool.com',
+    password: "welovekids",
+    :authentication       => :login,
+    :ssl                  => true,
+    :tls                  => true,
+    :enable_starttls_auto => true
   }
-  config.assets.precompile += Ckeditor.assets
 
 end
