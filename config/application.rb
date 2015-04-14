@@ -22,5 +22,19 @@ module LoveAndLaugh
     config.filter_parameters += [:password, :password_confirmation]
     config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
 
+    config.action_mailer.delivery_method = :smtp
+
+    config.action_mailer.smtp_settings = {
+      :address              => "smtp.zoho.com",
+      :port                 => '465',
+      :domain               => 'loveandlaugherplayschool.com',
+      :user_name            => ENV["GMAIL_USERNAME"],
+      :password             => ENV["GMAIL_PASSWORD"],
+      :authentication       => :plain,
+      :tls                  => true,
+      :enable_starttls_auto => true,
+      #   :openssl_verify_mode    => "none",
+    }
+
   end
 end

@@ -68,7 +68,7 @@ class User < ActiveRecord::Base
     Child.all.each do |c|
      if c.feedback_requested_date.nil?
        puts "inside nil feedback condition"
-       @checking_date = c.joining_date + 2.months
+       @checking_date = c.joining_date + 2.months if c.joining_date
      else
        puts "inside else condition"
        @checking_date = c.feedback_requested_date + 2.months

@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "Love and Laughter Playschool" "info@loveandlaughterplayschool.com"
+  default from: "info@loveandlaughterplayschool.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -14,7 +14,7 @@ class UserMailer < ActionMailer::Base
   def send_digest user, message
     @user = user
     @content = message.content
-    mail(to: user.email, subject: message.title)
+    mail(to: user.email, subject: "[Love & Laughter Playschool ] #{message.title}")
   end
 
   def remind_holiday user, holiday_name, holiday_date
@@ -23,6 +23,6 @@ class UserMailer < ActionMailer::Base
 
   def request_feedback user_id
     puts User.find(user_id).email
-    mail(to: User.find(user_id).email, subject: "Feedback Request")
+    mail(to: User.find(user_id).email, subject: "[Love & Laughter Playschool] Feedback Request")
   end
 end
