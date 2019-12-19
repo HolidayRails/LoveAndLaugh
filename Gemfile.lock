@@ -147,7 +147,7 @@ GEM
       mime-types
     pg (0.17.1)
     polyglot (0.3.5)
-    rack (1.5.2)
+    rack (1.5.5)
     rack-google-analytics (1.2.0)
       actionpack
       activesupport
